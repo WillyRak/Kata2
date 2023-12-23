@@ -1,4 +1,5 @@
 import Kata2.Person;
+import Kata2.TsvFilePersonLoader;
 
 import java.util.List;
 
@@ -6,7 +7,9 @@ import java.util.List;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        Person person1 = new Person(1, 110, 101);
-        System.out.println(person1);
+        List<Person> people = TsvFilePersonLoader.with("hw_25000.tsv").load();
+        for(Person person : people) {
+            System.out.println(person);
+        }
     }
 }
