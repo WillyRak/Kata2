@@ -1,5 +1,6 @@
 package is2.kata2.main;
 
+import is2.kata2.calculator.MeanCalculator;
 import is2.kata2.calculator.WeightHistogramCalculator;
 import is2.kata2.loader.TsvFilePersonLoader;
 import is2.kata2.person.Person;
@@ -20,6 +21,10 @@ public class Main {
         for(String key : histogram.keySet().stream().sorted().toList()) {
             System.out.println(key + " " + histogram.get(key));
         }
+
+        MeanCalculator meanCalculator = new MeanCalculator();
+        Map<String, Double> mean = meanCalculator.calculate(people);
+        System.out.println(mean);
 
     }
 
